@@ -21,10 +21,14 @@ body {
   .control-container .inputs {
     padding: 1rem; }
     .control-container .inputs input[type=number] {
-      border: 1px solid #cfcfcf;
-      padding: 1rem;
-      width: 10rem;
-      margin-right: 1rem; }
+      border: none;
+      width: 3.5rem;
+      text-align: center;
+      font-weight: 700;
+      margin-left: 0.5rem; }
+      .control-container .inputs input[type=number]:focus, .control-container .inputs input[type=number]:active {
+        border: none;
+        outline: none; }
     .control-container .inputs a {
       margin: 10px;
       padding: 1rem 3rem;

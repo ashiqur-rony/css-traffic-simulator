@@ -27,10 +27,16 @@ body {
 
     input {
       &[type=number] {
-        border: 1px solid #cfcfcf;
-        padding: 1rem;
-        width: 10rem;
-        margin-right: 1rem;
+        border: none;
+        width: 3.5rem;
+        text-align: center;
+        font-weight: 700;
+        margin-left: 0.5rem;
+
+        &:focus, &:active {
+          border: none;
+          outline: none;
+        }
       }
     }
 
