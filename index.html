@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Traffic Simulation - Ghumkumar</title>
+    <link rel="icon" href="https://i1.wp.com/ashiqur.com/wp-content/uploads/2018/05/cropped-G.png?fit=32%2C32&amp;ssl=1" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="road-container" id="road">
+    <div class="lane regular lane-1" id="lane-1">
+        <div class="vehicle car"></div>
+        <div class="vehicle truck"></div>
+        <div class="vehicle-count">
+            vehicles: <span id="lane-1-count">2</span>
+        </div>
+    </div>
+    <div class="lane regular lane-2" id="lane-2">
+        <div class="vehicle car"></div>
+        <div class="vehicle car car-3"></div>
+        <div class="vehicle car car-5"></div>
+        <div class="vehicle-count">
+            vehicles: <span id="lane-2-count">3</span>
+        </div>
+    </div>
+    <div class="lane priority lane-3" id="lane-3">
+        <div class="vehicle car emergency police"></div>
+        <div class="vehicle car taxi"></div>
+        <div class="vehicle bus"></div>
+        <div class="vehicle-count">
+            vehicles: <span id="lane-3-count">3</span>
+        </div>
+    </div>
+</div>
+<div class="control-container">
+    <div class="inputs">
+        <input type="number" value="40" step="5" min="20" max="100" id="occupy" /> <a class="add-vehicle">Update simulation</a>
+    </div>
+</div>
+<footer>
+    Developed by <a href="https://ashiqur.com">Ashiqur Rahman</a>
+</footer>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

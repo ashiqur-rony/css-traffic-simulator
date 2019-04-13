@@ -1,0 +1,46 @@
+.vehicle {
+  margin: 15px;
+  height: 80px;
+  min-width: 80px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -200px;
+  top: calc(50% - 60px);
+  animation: move 10s infinite linear;
+
+  &.car {
+    background-image: url('../images/car-1.svg');
+
+    @for $i from 1 through 7 {
+      &.car-#{$i} {
+        background-image: url('../images/car-#{$i}.svg');
+      }
+    }
+
+    &.police {
+      background-image: url('../images/police.svg');
+    }
+
+    &.ambulance {
+      background-image: url('../images/ambulance.svg');
+    }
+
+    &.taxi {
+      background-image: url('../images/taxi.svg');
+    }
+  }
+
+  &.bus {
+    background-image: url('../images/bus.svg');
+    min-width: 120px;
+    animation-name: move-bus;
+    animation-duration: 25s!important;
+  }
+
+  &.truck {
+    background-image: url('../images/truck.svg');
+    min-width: 170px;
+  }
+}

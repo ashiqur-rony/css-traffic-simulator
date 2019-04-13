@@ -1,0 +1,41 @@
+@keyframes move {
+  to {
+    transform: translateX(2200px);
+  }
+}
+
+@keyframes move-bus {
+  40%, 100% {
+    transform: translateX(2200px);
+  }
+}
+
+@keyframes jam {
+  25%, 25.5% {
+    transform: translateX(550px);
+  }
+
+  40%, 40.5% {
+    transform: translateX(880px);
+  }
+
+  45%, 45.5% {
+    transform: translateX(990px);
+  }
+
+  50% {
+    transform: translateX(1080px);
+  }
+
+  60%, 60.5% {
+    transform: translateX(1360px);
+  }
+
+  70%, 70.5% {
+    transform: translateX(1580px);
+  }
+
+  to {
+    transform: translateX(2200px);
+  }
+}

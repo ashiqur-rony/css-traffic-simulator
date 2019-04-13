@@ -1,0 +1,70 @@
+*, body, table, p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-size: 14px;
+  font-weight: 300;
+  color: #444444;
+}
+
+.vehicle-count {
+  font-family: 'Major Mono Display', monospace;
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 1.0rem;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.control-container {
+  padding: 30px;
+  text-align: center;
+
+  .inputs {
+    padding: 1rem;
+
+    input {
+      &[type=number] {
+        border: 1px solid #cfcfcf;
+        padding: 1rem;
+        width: 10rem;
+        margin-right: 1rem;
+      }
+    }
+
+    a {
+      margin: 10px;
+      padding: 1rem 3rem;
+      border: 1px solid #dadada;
+      cursor: pointer;
+
+      &.add-vehicle {
+        background: #fefefe;
+      }
+    }
+  }
+
+  .description {
+    padding: 10px 30px;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: #e6eaea;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+    margin-left: 0.3rem;
+  }
+}

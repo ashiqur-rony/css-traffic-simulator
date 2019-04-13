@@ -1,0 +1,472 @@
+*, body, table, p {
+  font-family: 'Montserrat', sans-serif; }
+
+body {
+  font-size: 14px;
+  font-weight: 300;
+  color: #444444; }
+
+.vehicle-count {
+  font-family: 'Major Mono Display', monospace;
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 1.0rem;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.control-container {
+  padding: 30px;
+  text-align: center; }
+  .control-container .inputs {
+    padding: 1rem; }
+    .control-container .inputs input[type=number] {
+      border: 1px solid #cfcfcf;
+      padding: 1rem;
+      width: 10rem;
+      margin-right: 1rem; }
+    .control-container .inputs a {
+      margin: 10px;
+      padding: 1rem 3rem;
+      border: 1px solid #dadada;
+      cursor: pointer; }
+      .control-container .inputs a.add-vehicle {
+        background: #fefefe; }
+  .control-container .description {
+    padding: 10px 30px; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: #e6eaea;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  footer a {
+    text-decoration: none;
+    margin-left: 0.3rem; }
+
+.road-container {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  min-height: 350px;
+  width: 100%;
+  align-items: stretch;
+  justify-content: stretch;
+  border-top: 10px solid #81bf85;
+  border-bottom: 10px solid #81bf85;
+  overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto; }
+  .road-container .lane {
+    box-sizing: border-box;
+    min-height: 110px;
+    height: 33.33%;
+    background: #212121 url("../images/lane-border.png") repeat-x bottom left;
+    display: flex;
+    align-items: center;
+    position: relative; }
+    .road-container .lane::before {
+      content: 'NORMAL LANE';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(50% - 1.5rem);
+      font-size: 3rem;
+      line-height: 3rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center; }
+    .road-container .lane.lane-1::before {
+      content: 'NORMAL LANE'; }
+    .road-container .lane.lane-2::before {
+      content: 'NORMAL LANE'; }
+    .road-container .lane.priority::before {
+      content: 'PRIORITY LANE'; }
+    .road-container .lane:last-child {
+      background-image: none; }
+    .road-container .lane.priority {
+      background-color: #994424; }
+    .road-container .lane .vehicle {
+      animation-duration: 10s; }
+      .road-container .lane .vehicle:nth-child(1) {
+        animation-delay: 0s; }
+      .road-container .lane .vehicle:nth-child(2) {
+        animation-delay: 0.83s; }
+      .road-container .lane .vehicle:nth-child(3) {
+        animation-delay: 1.66s; }
+      .road-container .lane .vehicle:nth-child(4) {
+        animation-delay: 2.49s; }
+      .road-container .lane .vehicle:nth-child(5) {
+        animation-delay: 3.32s; }
+      .road-container .lane .vehicle:nth-child(6) {
+        animation-delay: 4.15s; }
+      .road-container .lane .vehicle:nth-child(7) {
+        animation-delay: 4.98s; }
+      .road-container .lane .vehicle:nth-child(8) {
+        animation-delay: 5.81s; }
+      .road-container .lane .vehicle:nth-child(9) {
+        animation-delay: 6.64s; }
+      .road-container .lane .vehicle:nth-child(10) {
+        animation-delay: 7.47s; }
+      .road-container .lane .vehicle:nth-child(11) {
+        animation-delay: 8.3s; }
+      .road-container .lane .vehicle:nth-child(12) {
+        animation-delay: 9.13s; }
+      .road-container .lane .vehicle:nth-child(13) {
+        animation-delay: 9.96s; }
+      .road-container .lane .vehicle:nth-child(14) {
+        animation-delay: 10.79s; }
+      .road-container .lane .vehicle:nth-child(15) {
+        animation-delay: 11.62s; }
+      .road-container .lane .vehicle:nth-child(16) {
+        animation-delay: 12.45s; }
+      .road-container .lane .vehicle:nth-child(17) {
+        animation-delay: 13.28s; }
+      .road-container .lane .vehicle:nth-child(18) {
+        animation-delay: 14.11s; }
+      .road-container .lane .vehicle:nth-child(19) {
+        animation-delay: 14.94s; }
+      .road-container .lane .vehicle:nth-child(20) {
+        animation-delay: 15.77s; }
+      .road-container .lane .vehicle:nth-child(21) {
+        animation-delay: 16.6s; }
+      .road-container .lane .vehicle:nth-child(22) {
+        animation-delay: 17.43s; }
+      .road-container .lane .vehicle:nth-child(23) {
+        animation-delay: 18.26s; }
+      .road-container .lane .vehicle:nth-child(24) {
+        animation-delay: 19.09s; }
+      .road-container .lane .vehicle:nth-child(25) {
+        animation-delay: 19.92s; }
+      .road-container .lane .vehicle:nth-child(26) {
+        animation-delay: 20.75s; }
+      .road-container .lane .vehicle:nth-child(27) {
+        animation-delay: 21.58s; }
+      .road-container .lane .vehicle:nth-child(28) {
+        animation-delay: 22.41s; }
+      .road-container .lane .vehicle:nth-child(29) {
+        animation-delay: 23.24s; }
+      .road-container .lane .vehicle:nth-child(30) {
+        animation-delay: 24.07s; }
+  .road-container.slowest .lane.lane-1 .vehicle {
+    animation-duration: 40s;
+    animation-name: jam; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(1) {
+      animation-delay: 0s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(2) {
+      animation-delay: 3.33s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(3) {
+      animation-delay: 6.66s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(4) {
+      animation-delay: 9.99s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(5) {
+      animation-delay: 13.32s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(6) {
+      animation-delay: 16.65s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(7) {
+      animation-delay: 19.98s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(8) {
+      animation-delay: 23.31s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(9) {
+      animation-delay: 26.64s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(10) {
+      animation-delay: 29.97s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(11) {
+      animation-delay: 33.3s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(12) {
+      animation-delay: 36.63s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(13) {
+      animation-delay: 39.96s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(14) {
+      animation-delay: 43.29s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(15) {
+      animation-delay: 46.62s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(16) {
+      animation-delay: 49.95s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(17) {
+      animation-delay: 53.28s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(18) {
+      animation-delay: 56.61s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(19) {
+      animation-delay: 59.94s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(20) {
+      animation-delay: 63.27s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(21) {
+      animation-delay: 66.6s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(22) {
+      animation-delay: 69.93s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(23) {
+      animation-delay: 73.26s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(24) {
+      animation-delay: 76.59s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(25) {
+      animation-delay: 79.92s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(26) {
+      animation-delay: 83.25s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(27) {
+      animation-delay: 86.58s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(28) {
+      animation-delay: 89.91s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(29) {
+      animation-delay: 93.24s; }
+    .road-container.slowest .lane.lane-1 .vehicle:nth-child(30) {
+      animation-delay: 96.57s; }
+  .road-container.slowest .lane.lane-2 .vehicle {
+    animation-duration: 37s;
+    animation-name: jam; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(1) {
+      animation-delay: 0s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(2) {
+      animation-delay: 3.08s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(3) {
+      animation-delay: 6.16s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(4) {
+      animation-delay: 9.24s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(5) {
+      animation-delay: 12.32s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(6) {
+      animation-delay: 15.4s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(7) {
+      animation-delay: 18.48s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(8) {
+      animation-delay: 21.56s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(9) {
+      animation-delay: 24.64s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(10) {
+      animation-delay: 27.72s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(11) {
+      animation-delay: 30.8s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(12) {
+      animation-delay: 33.88s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(13) {
+      animation-delay: 36.96s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(14) {
+      animation-delay: 40.04s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(15) {
+      animation-delay: 43.12s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(16) {
+      animation-delay: 46.2s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(17) {
+      animation-delay: 49.28s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(18) {
+      animation-delay: 52.36s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(19) {
+      animation-delay: 55.44s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(20) {
+      animation-delay: 58.52s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(21) {
+      animation-delay: 61.6s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(22) {
+      animation-delay: 64.68s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(23) {
+      animation-delay: 67.76s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(24) {
+      animation-delay: 70.84s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(25) {
+      animation-delay: 73.92s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(26) {
+      animation-delay: 77s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(27) {
+      animation-delay: 80.08s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(28) {
+      animation-delay: 83.16s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(29) {
+      animation-delay: 86.24s; }
+    .road-container.slowest .lane.lane-2 .vehicle:nth-child(30) {
+      animation-delay: 89.32s; }
+  .road-container.slow .lane.lane-1 .vehicle {
+    animation-duration: 28s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(1) {
+      animation-delay: 0s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(2) {
+      animation-delay: 2.33s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(3) {
+      animation-delay: 4.66s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(4) {
+      animation-delay: 6.99s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(5) {
+      animation-delay: 9.32s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(6) {
+      animation-delay: 11.65s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(7) {
+      animation-delay: 13.98s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(8) {
+      animation-delay: 16.31s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(9) {
+      animation-delay: 18.64s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(10) {
+      animation-delay: 20.97s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(11) {
+      animation-delay: 23.3s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(12) {
+      animation-delay: 25.63s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(13) {
+      animation-delay: 27.96s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(14) {
+      animation-delay: 30.29s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(15) {
+      animation-delay: 32.62s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(16) {
+      animation-delay: 34.95s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(17) {
+      animation-delay: 37.28s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(18) {
+      animation-delay: 39.61s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(19) {
+      animation-delay: 41.94s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(20) {
+      animation-delay: 44.27s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(21) {
+      animation-delay: 46.6s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(22) {
+      animation-delay: 48.93s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(23) {
+      animation-delay: 51.26s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(24) {
+      animation-delay: 53.59s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(25) {
+      animation-delay: 55.92s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(26) {
+      animation-delay: 58.25s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(27) {
+      animation-delay: 60.58s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(28) {
+      animation-delay: 62.91s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(29) {
+      animation-delay: 65.24s; }
+    .road-container.slow .lane.lane-1 .vehicle:nth-child(30) {
+      animation-delay: 67.57s; }
+  .road-container.slow .lane.lane-2 .vehicle {
+    animation-duration: 25s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(1) {
+      animation-delay: 0s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(2) {
+      animation-delay: 2.08s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(3) {
+      animation-delay: 4.16s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(4) {
+      animation-delay: 6.24s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(5) {
+      animation-delay: 8.32s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(6) {
+      animation-delay: 10.4s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(7) {
+      animation-delay: 12.48s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(8) {
+      animation-delay: 14.56s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(9) {
+      animation-delay: 16.64s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(10) {
+      animation-delay: 18.72s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(11) {
+      animation-delay: 20.8s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(12) {
+      animation-delay: 22.88s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(13) {
+      animation-delay: 24.96s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(14) {
+      animation-delay: 27.04s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(15) {
+      animation-delay: 29.12s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(16) {
+      animation-delay: 31.2s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(17) {
+      animation-delay: 33.28s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(18) {
+      animation-delay: 35.36s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(19) {
+      animation-delay: 37.44s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(20) {
+      animation-delay: 39.52s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(21) {
+      animation-delay: 41.6s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(22) {
+      animation-delay: 43.68s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(23) {
+      animation-delay: 45.76s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(24) {
+      animation-delay: 47.84s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(25) {
+      animation-delay: 49.92s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(26) {
+      animation-delay: 52s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(27) {
+      animation-delay: 54.08s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(28) {
+      animation-delay: 56.16s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(29) {
+      animation-delay: 58.24s; }
+    .road-container.slow .lane.lane-2 .vehicle:nth-child(30) {
+      animation-delay: 60.32s; }
+
+.vehicle {
+  margin: 15px;
+  height: 80px;
+  min-width: 80px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -200px;
+  top: calc(50% - 60px);
+  animation: move 10s infinite linear; }
+  .vehicle.car {
+    background-image: url("../images/car-1.svg"); }
+    .vehicle.car.car-1 {
+      background-image: url("../images/car-1.svg"); }
+    .vehicle.car.car-2 {
+      background-image: url("../images/car-2.svg"); }
+    .vehicle.car.car-3 {
+      background-image: url("../images/car-3.svg"); }
+    .vehicle.car.car-4 {
+      background-image: url("../images/car-4.svg"); }
+    .vehicle.car.car-5 {
+      background-image: url("../images/car-5.svg"); }
+    .vehicle.car.car-6 {
+      background-image: url("../images/car-6.svg"); }
+    .vehicle.car.car-7 {
+      background-image: url("../images/car-7.svg"); }
+    .vehicle.car.police {
+      background-image: url("../images/police.svg"); }
+    .vehicle.car.ambulance {
+      background-image: url("../images/ambulance.svg"); }
+    .vehicle.car.taxi {
+      background-image: url("../images/taxi.svg"); }
+  .vehicle.bus {
+    background-image: url("../images/bus.svg");
+    min-width: 120px;
+    animation-name: move-bus;
+    animation-duration: 25s !important; }
+  .vehicle.truck {
+    background-image: url("../images/truck.svg");
+    min-width: 170px; }
+
+@keyframes move {
+  to {
+    transform: translateX(2200px); } }
+@keyframes move-bus {
+  40%, 100% {
+    transform: translateX(2200px); } }
+@keyframes jam {
+  25%, 25.5% {
+    transform: translateX(550px); }
+  40%, 40.5% {
+    transform: translateX(880px); }
+  45%, 45.5% {
+    transform: translateX(990px); }
+  50% {
+    transform: translateX(1080px); }
+  60%, 60.5% {
+    transform: translateX(1360px); }
+  70%, 70.5% {
+    transform: translateX(1580px); }
+  to {
+    transform: translateX(2200px); } }
+
+/*# sourceMappingURL=style.css.map */

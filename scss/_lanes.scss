@@ -1,0 +1,131 @@
+.road-container {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  min-height: 350px;
+  width: 100%;
+  align-items: stretch;
+  justify-content: stretch;
+  border-top: 10px solid #81bf85;
+  border-bottom: 10px solid #81bf85;
+  overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  .lane {
+    box-sizing: border-box;
+    min-height: 110px;
+    height: 33.33%;
+    background: #212121 url('../images/lane-border.png') repeat-x bottom left;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: 'NORMAL LANE';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(50% - 1.5rem);
+      font-size: 3rem;
+      line-height: 3rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+    }
+
+    &.lane-1 {
+      &::before {
+        content: 'NORMAL LANE';
+      }
+    }
+
+    &.lane-2 {
+      &::before {
+        content: 'NORMAL LANE';
+      }
+    }
+
+    &.priority {
+      &::before {
+        content: 'PRIORITY LANE';
+      }
+    }
+
+    &:last-child {
+      background-image: none;
+    }
+
+    &.priority {
+      background-color: #994424;
+    }
+
+    .vehicle {
+      animation-duration: 10s;
+
+      @for $i from 1 through 30 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{0.83 * ($i - 1)}s;
+        }
+      }
+    }
+  }
+
+  &.slowest {
+    .lane {
+      &.lane-1 {
+        .vehicle {
+          animation-duration: 40s;
+          animation-name: jam;
+
+          @for $i from 1 through 30 {
+            &:nth-child(#{$i}) {
+              animation-delay: #{3.33 * ($i - 1)}s;
+            }
+          }
+        }
+      }
+
+      &.lane-2 {
+        .vehicle {
+          animation-duration: 37s;
+          animation-name: jam;
+
+          @for $i from 1 through 30 {
+            &:nth-child(#{$i}) {
+              animation-delay: #{3.08 * ($i - 1)}s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.slow {
+    .lane {
+      &.lane-1 {
+        .vehicle {
+          animation-duration: 28s;
+
+          @for $i from 1 through 30 {
+            &:nth-child(#{$i}) {
+              animation-delay: #{2.33 * ($i - 1)}s;
+            }
+          }
+        }
+      }
+
+      &.lane-2 {
+        .vehicle {
+          animation-duration: 25s;
+
+          @for $i from 1 through 30 {
+            &:nth-child(#{$i}) {
+              animation-delay: #{2.08 * ($i - 1)}s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
